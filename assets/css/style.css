@@ -1,21 +1,70 @@
-*{
+* {
     scroll-behavior: smooth;
-   }
-   
+}
+
 .header_carousel .carousel-item img {
     height: 500px; /* Adjust the height as needed */
     object-fit: cover; /* Ensures the image covers the entire carousel item */
 }
 
-.card-img   {
+.card-img {
     height: 240px; /* Adjust the height as needed */
 }
 
 .product_img img {
     height: 300px;
-    width:250px;
+    width: 250px;
 }
-.feature{
-    padding-top : 100px;
+
+a {
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Corrected cursor value */
+}
+
+.feature {
+    padding-top: 100px;
     padding-bottom: 300px;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: rgba(0, 0, 255, 0.4);
+    font-size: 18px;
+}
+
+a:active {
+    color: white;
+    background-color: gray;
+}
+
+.list-group-item:hover {
+    background-color: rgba(18, 91, 193, 0.3);
+}
+
+.single_product:hover{
+    width : 260px;
+    height : 450px;
+}
+.single_product a{
+    text-decoration: none;
+}
+
+.single_product a:hover{
+    background-color: rgb(7, 7, 7);
+    color : white;
+    padding : 3px;
+}
+
+.card:hover{
+    width:400px;
+    height: 245px;;
+}
+
+.footer_section a{
+    text-decoration: none;
+}
+.footer_section a:hover{
+    background-color: rgb(10, 10, 10);
+    color : white;
+    padding : 3px;
 }
