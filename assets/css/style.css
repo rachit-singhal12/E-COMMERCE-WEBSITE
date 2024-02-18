@@ -3,17 +3,17 @@
 }
 
 .header_carousel .carousel-item img {
-    height: 500px; /* Adjust the height as needed */
+    height: 100vh; /* Adjust the height as needed */
     object-fit: cover; /* Ensures the image covers the entire carousel item */
 }
 
 .card-img {
-    height: 240px; /* Adjust the height as needed */
+    height: 40vh; /* Adjust the height as needed */
 }
 
 .product_img img {
-    height: 300px;
-    width: 250px;
+    height: 40vh;
+    width: 40vh;
 }
 
 a {
