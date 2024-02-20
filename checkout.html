@@ -8,7 +8,10 @@
     <title>Checkout</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
 
 </head>
@@ -60,7 +63,7 @@
                 <h1 class="text-capitalize">Checkout</h1>
             </div>
         <div class="row bg_cart_1 rounded">
-            <form>
+            <form onsubmit="return confirmOrder()" id="confirmOrder" method="post">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
@@ -111,10 +114,9 @@
                     </label>
                   </div>
                 </div> 
-                <a href="order_confirmation.html" class="btn btn-primary">Purchase</a>
+                <button type="submit" class="btn btn-primary">Purchase</button>
               </form>
         <div class="col-md-4 rounded">
-        <!-- Card -->
         <div class="mb-3">
         <div class="pt-4">
         <h5 class="mb-3">Order summary</h5>
@@ -147,9 +149,7 @@
         </ul>
         </div>
         </div>
-        <!-- Card -->
         </div>
-        <!--Grid column-->
         </div>
         </div>
     </section>
@@ -222,5 +222,35 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+         
+        function confirmOrder() {
+            var email = document.getElementById('inputEmail4').value.trim();
+            var password = document.getElementById('inputPassword4').value.trim();
+            var phone = document.getElementById('inputPhone').value.trim();
+            var country = document.getElementById('inputCountry').value.trim();
+            var address = document.getElementById('inputAddress').value.trim();
+            var city = document.getElementById('inputCity').value.trim();
+            var state = document.getElementById('inputState').value.trim();
+            var zip = document.getElementById('inputZip').value.trim();
+            
+            if (!document.getElementById('gridCheck').checked) {
+                alert("Please check the checkbox.");
+                return false;
+            }
+
+            if (email === '' || password === '' || phone === '' || country === '' || address === '' || city === '' || state === '' || zip === '') {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            alert("Order Confirmed");
+
+            window.location.href = "order_confirmation.html"; 
+
+            return false;
+        }
+    </script>
 </body>
 </html>

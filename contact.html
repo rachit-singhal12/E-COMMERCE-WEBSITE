@@ -8,6 +8,9 @@
 
     <title>Contact us</title>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -107,7 +110,7 @@
         <div class="row">
         <div class="col-md-8 col-10 mx-auto mb-3 my-5 py-5 border shadow">
         <h3 class="text-center mb-3">Form</h3>
-        <form action="contact.html" method="POST" id="form">
+        <form action="" method="POST" id="form">
         <div class="form-group">
         <label>Name</label>
         <input name="name" id="name" type="text" placeholder="Name"
@@ -199,5 +202,37 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#form').submit(function(e){
+                e.preventDefault(); 
+                var name = $('#name').val().trim();
+                var email = $('#email').val().trim();
+                var message = $('#msg').val().trim();
+
+                console.log(name);
+                console.log(email);
+                console.log(message);
+
+                $('.error').remove();
+                
+                var isValidForm = true;
+                if(name.length <1){
+                    $('#name').after('<span>Name Field is reqired</span');
+                    isValidForm=false;
+                }
+                if(email.length <1){
+                    $('#email').after('<span>Email Field is reqired</span');
+                    isValidForm=false;
+                }
+                if(message.length <1){
+                    $('#msg').after('<span>Message Field is reqired</span');
+                    isValidForm=false;
+                }
+                alert("form submitted");
+                
+            });
+        });
+    </script>
 </body>
 </html>
