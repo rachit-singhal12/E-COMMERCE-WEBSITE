@@ -3,12 +3,12 @@
 }
 
 .header_carousel .carousel-item img {
-    height: 100vh; /* Adjust the height as needed */
-    object-fit: cover; /* Ensures the image covers the entire carousel item */
+    height: 100vh; 
+    object-fit: cover; 
 }
 
 .card-img {
-    height: 40vh; /* Adjust the height as needed */
+    height: 40vh; 
 }
 
 .product_img img {
@@ -18,7 +18,7 @@
 
 a {
     transition: background-color 0.3s ease;
-    cursor: pointer; /* Corrected cursor value */
+    cursor: pointer; 
 }
 
 .feature {
